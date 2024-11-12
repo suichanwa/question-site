@@ -1,0 +1,32 @@
+.photo-quiz {
+    text-align: center;
+}
+
+.photo-quiz-image {
+    width: 100%;
+    max-width: 500px; /* Adjust the max-width to fit well into the page */
+    height: auto;
+    object-fit: cover;
+    border: 4px solid #000; /* Increase the border size */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.photo-quiz label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.photo-quiz button {
+    padding: 0.5rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.photo-quiz button:hover {
+    background-color: #45a049;
+}
