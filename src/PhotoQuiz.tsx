@@ -9,11 +9,13 @@ const photos = [
     { src: '/photo/photo5.jpg', question: 'Ce culoare are peretele?', options: ['Alb imaculat', 'Negru profund', 'Gri elegant'] },
 ];
 
-const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void }> = ({ onComplete }) => {
+const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: string, surname: string }> = ({ onComplete, name, surname }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [answers, setAnswers] = useState<string[]>([]);
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [showPhoto, setShowPhoto] = useState(true);
+    const [showResultsButton, setShowResultsButton] = useState(false);
+    const [results, setResults] = useState<string | null>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -36,24 +38,41 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void }> = ({ onCo
                 setCurrentIndex(currentIndex + 1);
             } else {
                 onComplete([...answers, selectedAnswer]); // Send all answers when done
+                setShowResultsButton(true);
+                setShowPhoto(false); // Hide the photo when the quiz is complete
             }
         } else {
             alert('Please select an answer before continuing.');
         }
     };
 
+    const handleSeeResults = async () => {
+        try {
+            const response = await fetch('/get-answers', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, surname }),
+            });
+            const result = await response.text();
+            setResults(result);
+        } catch (error) {
+            alert('Failed to fetch results.');
+        }
+    };
+
     return (
         <div className="photo-quiz">
-            {showPhoto ? (
+            {showPhoto && currentIndex < photos.length && (
                 <img
                     src={photos[currentIndex].src}
                     alt={`Description of photo ${currentIndex + 1}`}
                     className="photo-quiz-image"
                 />
-            ) : (
+            )}
+            {!showPhoto && currentIndex < photos.length && (
                 <div>
                     <p>{photos[currentIndex].question}</p>
-                    <p>Selecteaza un raspuns:</p>
+                    <p>Select an answer for the photo:</p>
                     {photos[currentIndex].options.map((option) => (
                         <label key={option}>
                             <input
@@ -67,6 +86,15 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void }> = ({ onCo
                         </label>
                     ))}
                     <button onClick={handleNext}>Next</button>
+                </div>
+            )}
+            {showResultsButton && (
+                <button className="results-button" onClick={handleSeeResults}>See Your Results</button>
+            )}
+            {results && (
+                <div className="results">
+                    <h2>Your Results</h2>
+                    <pre>{results}</pre>
                 </div>
             )}
         </div>
