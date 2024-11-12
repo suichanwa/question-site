@@ -18,14 +18,19 @@ const App: React.FC = () => {
     };
 
     const handleAnswersSubmit = async (answers: string[]) => {
-        const data = `Answers:\n${answers.join('\n')}`;
+        const data = {
+            name,
+            surname,
+            answers,
+        };
         try {
-            await fetch('/save-answers', {
+            const response = await fetch('/save-answers', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ data }),
+                body: JSON.stringify(data),
             });
-            alert('Answers saved successfully!');
+            const result = await response.text();
+            alert(result);
         } catch (error) {
             alert('Failed to save answers.');
         }
@@ -53,7 +58,7 @@ const App: React.FC = () => {
                     <button className="start-button" onClick={handleStartQuiz}>Start Quiz</button>
                 </div>
             ) : (
-                <PhotoQuiz onComplete={handleAnswersSubmit} />
+                <PhotoQuiz onComplete={handleAnswersSubmit} name={name} surname={surname} />
             )}
         </div>
     );

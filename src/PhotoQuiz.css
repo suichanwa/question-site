@@ -30,3 +30,30 @@
 .photo-quiz button:hover {
     background-color: #45a049;
 }
+
+.results-button {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.results {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.results h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Increase the font size of the heading */
+}
+
+.results pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1.2rem; /* Increase the font size of the results text */
+}

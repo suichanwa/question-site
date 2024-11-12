@@ -1,0 +1,63 @@
+Name: nume 
+Surname: nume
+Answers:
+Galben strălucitor
+Albastru-roșu electric
+Fără 37 de minute ora 14
+Una neagră și trei albe
+Gri elegant
+
+Name: nume2
+Surname: nume3
+Answers:
+Galben strălucitor
+Albastru-roșu electric
+Fără 37 de minute ora 14
+Una neagră și trei albe
+Gri elegant
+
+Name: num34
+Surname: num34
+Answers:
+Albastru regal
+Roșu-albastru vibrant
+Fără 37 de minute ora 14
+Una neagră și trei albe
+Gri elegant
+
+Name: nu3
+Surname: nu3
+Answers:
+Galben strălucitor
+Albastru-roșu electric
+Fără 37 de minute ora 14
+Una neagră și trei albe
+Gri elegant
+
+Name: ed
+Surname: ed
+Answers:
+Galben strălucitor
+Albastru-roșu electric
+Fără 37 de minute ora 14
+Una neagră și trei albe
+Gri elegant
+
+Name: 88
+Surname: 99
+Answers:
+Roșu aprins
+Roșu intens
+13:23
+Două negre și două albe
+Alb imaculat
+
+Name: adf
+Surname: asdf
+Answers:
+Roșu aprins
+Roșu intens
+13:23
+Două negre și două albe
+Alb imaculat
+
