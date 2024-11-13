@@ -23,7 +23,7 @@
     "body-parser": "^1.19.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "start": "node server.js",
     "server": "node server.js",
     "build": "react-scripts build",
     "serve-https": "serve -s build -l 5000 --ssl-cert server.cert --ssl-key server.key",
