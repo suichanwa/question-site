@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 5002; // Change the port to 5002
+const PORT = process.env.PORT || 5002;
 
 app.use(bodyParser.json());
 
