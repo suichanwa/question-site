@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/question-site/static/css/main.6dbdeb11.css",
-    "main.js": "/question-site/static/js/main.dbe879d3.js",
+    "main.js": "/question-site/static/js/main.079b20b0.js",
     "static/js/453.20c56c3f.chunk.js": "/question-site/static/js/453.20c56c3f.chunk.js",
     "index.html": "/question-site/index.html",
     "main.6dbdeb11.css.map": "/question-site/static/css/main.6dbdeb11.css.map",
-    "main.dbe879d3.js.map": "/question-site/static/js/main.dbe879d3.js.map",
+    "main.079b20b0.js.map": "/question-site/static/js/main.079b20b0.js.map",
     "453.20c56c3f.chunk.js.map": "/question-site/static/js/453.20c56c3f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6dbdeb11.css",
-    "static/js/main.dbe879d3.js"
+    "static/js/main.079b20b0.js"
   ]
 }
