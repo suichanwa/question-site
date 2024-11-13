@@ -45,8 +45,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
             alert('Please select an answer before continuing.');
         }
     };
-
-    const handleAnswersSubmit = async (answers: string[]) => {
+const handleAnswersSubmit = async (answers: string[]) => {
     const data = {
         name,
         surname,

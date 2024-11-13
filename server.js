@@ -8,7 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://suichanwa.github.io', // Allow only your GitHub Pages domain
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
 
 app.post('/save-answers', (req, res) => {
     const { name, surname, answers } = req.body;
