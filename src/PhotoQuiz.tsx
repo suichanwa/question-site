@@ -53,7 +53,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
         answers,
     };
     try {
-        const response = await fetch('http://123.456.789.0:5002/save-answers', {
+        const response = await fetch('https://lit-savannah-98071-3d932f19963a.herokuapp.com/save-answers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -67,7 +67,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
 
 const handleSeeResults = async () => {
     try {
-        const response = await fetch('https://suichanwa.github.io/question-site/:5002/get-answers', {
+        const response = await fetch('https://lit-savannah-98071-3d932f19963a.herokuapp.com/get-answers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, surname }),
