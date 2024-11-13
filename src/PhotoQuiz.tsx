@@ -3,10 +3,10 @@ import './PhotoQuiz.css';
 
 const photos = [
     { src: '../public/photo/photo1.png', question: 'Ce culoare are cifra 35?', options: ['Roșu aprins', 'Albastru regal', 'Galben strălucitor'] },
-    { src: '../public/photo/photo2.png', question: 'În ce zi a săptămânii se află ora 6?', options: ['Roșu intens', 'Roșu-albastru vibrant', 'Albastru-roșu electric'] },
-    { src: '../public/photo/photo3.jpg', question: 'Ce oră arată ceasul?', options: ['13:23', '14:20', 'Fără 37 de minute ora 14'] },
-    { src: '../public/photo/photo4.jpg', question: 'Câte puncte arată ora 8?', options: ['Două negre și două albe', 'Patru puncte distincte', 'Una neagră și trei albe'] },
-    { src: '../public/photo/photo5.jpg', question: 'Ce culoare are peretele?', options: ['Alb imaculat', 'Negru profund', 'Gri elegant'] },
+    { src: 'photo/photo2.png', question: 'În ce zi a săptămânii se află ora 6?', options: ['Roșu intens', 'Roșu-albastru vibrant', 'Albastru-roșu electric'] },
+    { src: 'photo/photo3.jpg', question: 'Ce oră arată ceasul?', options: ['13:23', '14:20', 'Fără 37 de minute ora 14'] },
+    { src: 'photo/photo4.jpg', question: 'Câte puncte arată ora 8?', options: ['Două negre și două albe', 'Patru puncte distincte', 'Una neagră și trei albe'] },
+    { src: 'photo/photo5.jpg', question: 'Ce culoare are peretele?', options: ['Alb imaculat', 'Negru profund', 'Gri elegant'] },
 ];
 
 const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: string, surname: string }> = ({ onComplete, name, surname }) => {
@@ -53,7 +53,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
         answers,
     };
     try {
-        const response = await fetch('http://123.456.789.0:5002/save-answers', {
+        const response = await fetch('https://lit-savannah-98071-3d932f19963a.herokuapp.com/save-answers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -67,7 +67,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
 
 const handleSeeResults = async () => {
     try {
-        const response = await fetch('https://suichanwa.github.io/question-site/:5002/get-answers', {
+        const response = await fetch('https://lit-savannah-98071-3d932f19963a.herokuapp.com/get-answers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, surname }),
