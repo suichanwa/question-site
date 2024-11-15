@@ -61,3 +61,31 @@ Roșu intens
 Două negre și două albe
 Alb imaculat
 
+Name: dxdf
+Surname: dafdaf
+Answers:
+Albastru regal
+Roșu-albastru vibrant
+Fără 37 de minute ora 14
+Două negre și două albe
+Gri elegant
+
+Name: dxdf
+Surname: dafdaf
+Answers:
+Albastru regal
+Roșu-albastru vibrant
+Fără 37 de minute ora 14
+Două negre și două albe
+Gri elegant
+Gri elegant
+
+Name: awdwd
+Surname: wdadw
+Answers:
+Roșu aprins
+Roșu-albastru vibrant
+Fără 37 de minute ora 14
+Patru puncte distincte
+Gri elegant
+

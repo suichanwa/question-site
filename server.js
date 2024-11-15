@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'https://suichanwa.github.io', // Allow only your GitHub Pages domain
+    origin: ['http://localhost:3000', 'https://suichanwa.github.io'], // Allow both localhost and GitHub Pages
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
