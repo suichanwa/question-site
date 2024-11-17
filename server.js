@@ -49,6 +49,11 @@ app.post('/get-answers', (req, res) => {
     });
 });
 
+app.get('/correct-answers', (req, res) => {
+    const filePath = path.join(__dirname, 'correctAnswers.json');
+    res.sendFile(filePath);
+});
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
 
