@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://suichanwa.github.io'], // Allow both localhost and GitHub Pages
+    origin: ['http://localhost:3000', 'https://bogdanescu.netlify.app'], // Allow both localhost and Netlify
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
@@ -50,7 +50,7 @@ app.post('/get-answers', (req, res) => {
 });
 
 app.get('/correct-answers', (req, res) => {
-    const filePath = path.join(__dirname, 'correctAnswers.json');
+    const filePath = path.join(__dirname, 'public', 'correctAnswers.json');
     res.sendFile(filePath);
 });
 
