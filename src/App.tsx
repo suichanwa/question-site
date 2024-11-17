@@ -26,7 +26,7 @@ const App: React.FC = () => {
             answers,
         };
         try {
-            const response = await fetch('https://7bde-46-166-62-135.ngrok-free.app/save-answers', {
+            const response = await fetch('https://13b9-46-166-62-135.ngrok-free.app ', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
