@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import PhotoQuiz from './PhotoQuiz';
+import Results from './Results';
 import './App.css';
 
 const App: React.FC = () => {
@@ -37,29 +39,38 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="App">
-            <h1>Photo Quiz</h1>
-            {!quizStarted ? (
-                <div className="intro-container">
-                    {showAlert && <div className="alert">Please fill in your name and surname to proceed.</div>}
-                    <img src="/photo/introphoto.png" alt="Intro" className="intro-image" />
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Surname"
-                        value={surname}
-                        onChange={(e) => setSurname(e.target.value)}
-                    />
-                    <button className="start-button" onClick={handleStartQuiz}>Start Quiz</button>
-                </div>
-            ) : (
-                <PhotoQuiz onComplete={handleAnswersSubmit} name={name} surname={surname} />
-            )}
+        <div className="App container">
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <h1 className="my-4">Photo Quiz</h1>
+                        {!quizStarted ? (
+                            <div className="intro-container text-center">
+                                {showAlert && <div className="alert alert-danger">Please fill in your name and surname to proceed.</div>}
+                                <img src="/photo/introphoto.png" alt="Intro" className="intro-image img-fluid rounded mb-4" />
+                                <input
+                                    type="text"
+                                    className="form-control mb-2"
+                                    placeholder="Name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control mb-2"
+                                    placeholder="Surname"
+                                    value={surname}
+                                    onChange={(e) => setSurname(e.target.value)}
+                                />
+                                <button className="btn btn-primary" onClick={handleStartQuiz}>Start Quiz</button>
+                            </div>
+                        ) : (
+                            <PhotoQuiz onComplete={handleAnswersSubmit} name={name} surname={surname} />
+                        )}
+                    </>
+                } />
+                <Route path="/results" element={<Results name={name} surname={surname} />} />
+            </Routes>
         </div>
     );
 };

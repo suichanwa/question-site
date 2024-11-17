@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
@@ -7,6 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://suichanwa.github.io'], // Allow both localhost and GitHub Pages
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
 
 app.post('/save-answers', (req, res) => {
     const { name, surname, answers } = req.body;
@@ -41,6 +47,11 @@ app.post('/get-answers', (req, res) => {
             res.send('No answers found for the given name and surname.');
         }
     });
+});
+
+app.get('/correct-answers', (req, res) => {
+    const filePath = path.join(__dirname, 'correctAnswers.json');
+    res.sendFile(filePath);
 });
 
 // Serve static files from the React app

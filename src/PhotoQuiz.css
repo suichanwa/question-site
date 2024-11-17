@@ -1,5 +1,5 @@
 .photo-quiz {
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
 .photo-quiz-image {
@@ -10,6 +10,18 @@
     border: 4px solid #000; /* Increase the border size */
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+.photo-quiz .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.photo-quiz .list-group-item input[type="radio"] {
+    margin-right: 0.5rem;
+    flex-shrink: 0; /* Prevent the input from shrinking */
 }
 
 .photo-quiz label {
