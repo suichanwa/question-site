@@ -21,7 +21,7 @@ const PhotoQuiz: React.FC<{ onComplete: (answers: string[]) => void, name: strin
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowPhoto(false);
-        }, 1); 
+        }, 5000); 
 
         return () => clearTimeout(timer);
     }, [currentIndex]);
