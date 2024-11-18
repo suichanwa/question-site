@@ -10,7 +10,7 @@ const Results: React.FC<{ name: string, surname: string }> = ({ name, surname })
     useEffect(() => {
         const fetchResults = async () => {
             try {
-                const response = await fetch('https://7bde-46-166-62-135.ngrok-free.app/get-answers', {
+                const response = await fetch('https://question-site-backend.onrender.com/get-answers', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, surname }),
@@ -24,7 +24,7 @@ const Results: React.FC<{ name: string, surname: string }> = ({ name, surname })
 
         const fetchCorrectAnswers = async () => {
             try {
-                const response = await fetch('https://7bde-46-166-62-135.ngrok-free.app/correct-answers');
+                const response = await fetch('https://question-site-backend.onrender.com/correct-answers');
                 const data = await response.json();
                 setCorrectAnswers(data);
             } catch (error) {
