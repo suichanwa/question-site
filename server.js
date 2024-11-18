@@ -50,7 +50,7 @@ app.post('/get-answers', (req, res) => {
 });
 
 app.get('/correct-answers', (req, res) => {
-    const filePath = path.join(__dirname, 'public', 'correctAnswers.json');
+    const filePath = path.join(__dirname, 'correctAnswers.json');
     res.sendFile(filePath);
 });
 
